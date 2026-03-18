@@ -1,8 +1,10 @@
 ﻿using Abstracciones.Interfaces.Reglas;
+using Abstracciones.Modelos.Servicios;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,20 +17,23 @@ namespace Reglas
         {
             _configuration = configuration;
         }
-        public string ObtenerMetodo(string seccion, string metodo)
+        public string ObtenerMetodo(string seccion, string nombre)
         {
-            var valor = _configuration.GetSection(seccion)[metodo];
-            if (string.IsNullOrWhiteSpace(valor))
-                throw new Exception($"No se encontró la configuración: {seccion}:{metodo}");
-            return valor;
+            string? UrlBase = ObtenerUrlBase(seccion);
+            var Metodo = _configuration.GetSection(seccion).Get<APIEndPoint>
+                ().Metodos.Where(m => m.Nombre == nombre).FirstOrDefault().Valor;
+            return $"{UrlBase}{Metodo}";
         }
 
-        public string ObtenerValor(string seccion, string llave)
+        private string? ObtenerUrlBase(string seccion)
         {
-            var valor = _configuration.GetSection(seccion)[llave];
-            if (string.IsNullOrWhiteSpace(valor))
-                throw new Exception($"No se encontró la configuración: {seccion}:{llave}");
-            return valor;
+            return _configuration.GetSection(seccion).Get<APIEndPoint>
+                            ().UrlBase;
+        }
+
+        public string ObtenerValor(string llave)
+        {
+            return _configuration.GetSection(llave).Value;
         }
     }
 }

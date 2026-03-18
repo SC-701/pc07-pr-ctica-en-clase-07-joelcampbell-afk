@@ -28,14 +28,16 @@ namespace Abstracciones.Modelos
 
     public class ProductoRequest : ProductoBase
     {
+        [Required(ErrorMessage = "La subcategoría es requerida")]
         public Guid IdSubCategoria { get; set; }
     }
 
     public class ProductoResponse : ProductoBase
     {
         public Guid Id { get; set; }
+        public Guid IdCategoria { get; set; }
+        public Guid IdSubCategoria { get; set; }
         public string SubCategoria { get; set; }
         public string Categoria { get; set; }
-        public decimal PrecioUSD { get; set; }
     }
 }

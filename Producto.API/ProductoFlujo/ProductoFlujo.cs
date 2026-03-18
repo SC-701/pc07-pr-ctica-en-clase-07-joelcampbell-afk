@@ -8,12 +8,11 @@ namespace Flujo
     public class ProductoFlujo : IProductoFlujo
     {
         private IProductoDA _productoDA;
-        private readonly IProductoReglas _productoReglas;
+        
 
-        public ProductoFlujo(IProductoDA productoDA, IProductoReglas productoReglas)
+        public ProductoFlujo(IProductoDA productoDA)
         {
             _productoDA = productoDA;
-            _productoReglas = productoReglas;
         }
 
         public Task<Guid> Agregar(ProductoRequest producto)
@@ -41,7 +40,6 @@ namespace Flujo
             var producto = await _productoDA.Obtener(Id);
             if (producto == null) return null;
 
-            producto.PrecioUSD = await _productoReglas.CalcularPrecioUSD(producto.Precio);
             return producto;
         }
     }

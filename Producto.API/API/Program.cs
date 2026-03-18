@@ -1,12 +1,10 @@
 using Abstracciones.Interfaces.DA;
 using Abstracciones.Interfaces.Flujo;
 using Abstracciones.Interfaces.Reglas;
-using Abstracciones.Interfaces.Servicios;
 using DA;
 using DA.Repositorios;
 using Flujo;
 using Reglas;
-using Servicios;
 
 
 
@@ -24,8 +22,10 @@ builder.Services.AddScoped<IProductoFlujo, ProductoFlujo>();
 builder.Services.AddScoped<IProductoDA, ProductoDA>();
 builder.Services.AddScoped<IRepositorioDapper, RepositorioDapper>();
 builder.Services.AddScoped<IConfiguracion, Configuracion>();
-builder.Services.AddScoped<ITipoCambioServicio, TipoCambioServicio>();
-builder.Services.AddScoped<IProductoReglas, ProductoReglas>();
+builder.Services.AddScoped<ICategoriaFlujo, CategoriaFlujo>();
+builder.Services.AddScoped<ICategoriaDA, CategoriaDA>();
+builder.Services.AddScoped<ISubCategoriaFlujo, SubCategoriaFlujo>();
+builder.Services.AddScoped<ISubCategoriaDA, SubCategoriaDA>();
 
 
 var app = builder.Build();
