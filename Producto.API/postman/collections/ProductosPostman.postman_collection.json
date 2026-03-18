@@ -1,0 +1,160 @@
+{
+  "info": {
+    "_postman_id": "649cb846-4d28-4541-8f0f-76a2f2914026",
+    "name": "ProductosPostman",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Obtener",
+      "id": "ba7d6b35-2408-4a7b-b6c0-c90ccef08a89",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api80-gjfdf0d2apdhe4dd.northcentralus-01.azurewebsites.net/api/Vehiculo",
+          "protocol": "https",
+          "host": [
+            "api80-gjfdf0d2apdhe4dd",
+            "northcentralus-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "api",
+            "Vehiculo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ObtenerPorId",
+      "id": "bf25d446-9284-4e6a-b472-9fb9acda60d4",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api80-gjfdf0d2apdhe4dd.northcentralus-01.azurewebsites.net/api/Vehiculo/5ff69ab1-ea29-45bd-ab50-9c4734ab6f4d",
+          "protocol": "https",
+          "host": [
+            "api80-gjfdf0d2apdhe4dd",
+            "northcentralus-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "api",
+            "Vehiculo",
+            "5ff69ab1-ea29-45bd-ab50-9c4734ab6f4d"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agregar",
+      "id": "6bfda570-58a9-485b-a5c8-cb82d2c70008",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"placa\": \"CAL-028\",\r\n  \"color\": \"negro\",\r\n  \"año\": 2026,\r\n  \"precio\": 8000000,\r\n  \"correoPropietario\": \"caleb@2425correo.com\",\r\n  \"telefonoPropietario\": \"88881909\",\r\n  \"idModelo\": \"16455B92-EA3A-43D9-A978-E48CD40E9046\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api80-gjfdf0d2apdhe4dd.northcentralus-01.azurewebsites.net/api/Vehiculo",
+          "protocol": "https",
+          "host": [
+            "api80-gjfdf0d2apdhe4dd",
+            "northcentralus-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "api",
+            "Vehiculo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar",
+      "id": "ed254341-207f-4e28-8306-6d2ac9a65aeb",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://api80-gjfdf0d2apdhe4dd.northcentralus-01.azurewebsites.net/api/Vehiculo/5ff69ab1-ea29-45bd-ab50-9c4734ab6f4d",
+          "protocol": "https",
+          "host": [
+            "api80-gjfdf0d2apdhe4dd",
+            "northcentralus-01",
+            "azurewebsites",
+            "net"
+          ],
+          "path": [
+            "api",
+            "Vehiculo",
+            "5ff69ab1-ea29-45bd-ab50-9c4734ab6f4d"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Editar",
+      "id": "05af9fac-0684-4e46-8908-ec1eadc3cb0e",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Teclado Mecánico RGB Blue Switch\",\r\n  \"descripcion\": \"Teclado mecánico para gaming con iluminación RGB y switches rojos silenciosos\",\r\n  \"precio\": 56990,\r\n  \"stock\": 45,\r\n  \"codigoBarras\": \"TEC-MEC-RGB-RED-01\",\r\n  \"idSubCategoria\": \"E5555555-5555-5555-5555-555555555555\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/api/Producto/ecca287b-e6f0-4b65-8caf-3c6a4597d4a7",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "api",
+            "Producto",
+            "ecca287b-e6f0-4b65-8caf-3c6a4597d4a7"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "id": "75ecb43b-4d32-420c-86ce-d36367388baa",
+      "key": "baseURL",
+      "value": ""
+    }
+  ]
+}

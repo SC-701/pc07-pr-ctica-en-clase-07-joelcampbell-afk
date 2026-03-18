@@ -1,0 +1,192 @@
+{
+  "info": {
+    "_postman_id": "1858d6be-3708-4d49-bd4c-e2b1022dd08a",
+    "name": "Promociones_PollosHermanos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Promociones",
+      "item": [
+        {
+          "name": "AgregarPromocion",
+          "id": "fb9e6eba-f673-46bb-ba90-ef7bee403a21",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idProducto\": \"8c875f63-9972-471e-989d-253eba3592fc\",\r\n  \"porcentajeDescuento\": 15.00,\r\n  \"fechaVencimiento\": \"2026-12-31\",\r\n  \"promocionValida\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5065/api/promocion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5065",
+              "path": [
+                "api",
+                "promocion"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ObtenerPromociones",
+          "id": "2c1b2090-61cb-4644-8ede-41189b8d6940",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5065/api/promocion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5065",
+              "path": [
+                "api",
+                "promocion"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ObtenerPromocionPorID",
+          "id": "73a28caa-f104-4b36-bcc5-2bb9740fd725",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5065/api/promocion/5b24192c-9225-4516-b8d6-06ff89168b36",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5065",
+              "path": [
+                "api",
+                "promocion",
+                "5b24192c-9225-4516-b8d6-06ff89168b36"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EditarPromocion",
+          "id": "5c673c45-2854-4edf-afce-1124ff2ae639",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"idProducto\": \"8c875f63-9972-471e-989d-253eba3592fc\",\r\n  \"porcentajeDescuento\": 25.00,\r\n  \"fechaVencimiento\": \"2026-12-31\",\r\n  \"promocionValida\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5065/api/promocion/5b24192c-9225-4516-b8d6-06ff89168b36",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5065",
+              "path": [
+                "api",
+                "promocion",
+                "5b24192c-9225-4516-b8d6-06ff89168b36"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EliminarPromocion",
+          "id": "df3d2640-4d17-4f07-b6fc-fea591b57647",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5065/api/promocion/5b24192c-9225-4516-b8d6-06ff89168b36",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5065",
+              "path": [
+                "api",
+                "promocion",
+                "5b24192c-9225-4516-b8d6-06ff89168b36"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "e1a18c57-0bc9-4fa6-9ccc-c37292f9ae74"
+    },
+    {
+      "name": "agregarProducto",
+      "id": "3bd905ec-6060-45ea-8e26-1ad29c3bd31c",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Producto-1\",\r\n  \"precio\": 100000,\r\n  \"descripcion\": \"muy bueno\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5065/api/producto",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5065",
+          "path": [
+            "api",
+            "producto"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ListarProductos",
+      "id": "ff16517b-51bf-493c-9cb6-70979ffd2ad8",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5065/api/producto",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5065",
+          "path": [
+            "api",
+            "producto"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
